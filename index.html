@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Люксшоп — термокружки та термоси</title>
+  <meta name="description" content="Купити термокружку або термос 500 мл. Висока якість. Швидка доставка по Україні. Люксшоп — тепло з собою." />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #1e1e1e;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 20px;
+      text-align: center;
+    }
+    .logo {
+      max-width: 150px;
+    }
+    h1 {
+      margin: 0.2em 0;
+    }
+    main {
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .product {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      text-align: center;
+    }
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .carousel img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      cursor: pointer;
+      padding: 0.2em 0.5em;
+      border-radius: 5px;
+      z-index: 2;
+    }
+    .arrow-left {
+      left: 10px;
+    }
+    .arrow-right {
+      right: 10px;
+    }
+    .price {
+      color: #c00;
+      font-weight: bold;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1em;
+      background-color: #d32f2f;
+      color: white;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      font-size: 0.9em;
+      background-color: #f0f0f0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/JW2qOoh.jpeg" alt="Логотип Люксшоп" class="logo" />
+    <div class="header-content">
+      <h1>Люксшоп</h1>
+      <p>Якісні термоси та термокружки для тепла і комфорту</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="product">
+      <div class="carousel">
+        <img src="https://sc04.alicdn.com/kf/H7cda7698557340bc861ab759fc8ac5a4u.jpg" class="active" alt="Термокружка 1">
+        <img src="https://sc04.alicdn.com/kf/H0389b16bb5e24f87978b1c6f3769db032.jpg" alt="Термокружка 2">
+        <img src="https://sc04.alicdn.com/kf/H7a0c8e6ed5844064a709180d41244d9d2.jpg" alt="Термокружка 3">
+        <img src="https://sc04.alicdn.com/kf/Hd76602c24f08486a9ef8ffbbef8d2042f.jpg" alt="Термокружка 4">
+        <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
+        <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
+      </div>
+      <h3>Термокружка 500 мл</h3>
+      <p class="price">від 300 грн</p>
+      <a class="btn" href="https://www.instagram.com/moa.skrunya/" target="_blank">Замовити в Instagram</a>
+    </div>
+
+    <div class="product">
+      <div class="carousel">
+        <img src="https://s.alicdn.com/@sc04/kf/H1f84e9e66cbc432685e6fc1282143777f.jpg_720x720q50.jpg" class="active" alt="Термос 1">
+        <img src="https://sc04.alicdn.com/kf/H66407f9ed51345e89fc69497c777e1dcH.jpg" alt="Термос 2">
+        <img src="https://sc04.alicdn.com/kf/H5914872b858f4e7b91176abdc821b310P.jpg" alt="Термос 3">
+        <img src="https://sc04.alicdn.com/kf/H1cbbc565113d4d39b58a1c41bd97a87e0.jpg" alt="Термос 4">
+        <img src="https://sc04.alicdn.com/kf/H2f49b6ef2b2e4d8ca85ef3dfee10ac5cZ.jpg" alt="Термос 5">
+        <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
+        <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
+      </div>
+      <h3>Термос 500 мл</h3>
+      <p class="price">від 300 грн</p>
+      <a class="btn" href="https://www.instagram.com/moa.skrunya/" target="_blank">Замовити в Instagram</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Люксшоп. Всі права захищені.</p>
+  </footer>
+
+  <script>
+    function moveSlide(button, direction) {
+      const carousel = button.closest(".carousel");
+      const images = carousel.querySelectorAll("img");
+      let activeIndex = Array.from(images).findIndex((img) => img.classList.contains("active"));
+      images[activeIndex].classList.remove("active");
+      activeIndex = (activeIndex + direction + images.length) % images.length;
+      images[activeIndex].classList.add("active");
+    }
+  </script>
+</body>
+</html>
