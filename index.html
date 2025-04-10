@@ -18,36 +18,51 @@
     }
 
     header {
-      background: url('https://sdmntpritalynorth.oaiusercontent.com/files/00000000-d8d0-6246-a1eb-8c6304c10034/raw?se=2025-04-10T11%3A57%3A29Z&sp=r&sv=2024-08-04&sr=b&scid=af4beabf-8172-559c-bad4-01a3ce700e71&skoid=59d06260-d7df-416c-92f4-051f0b47c607&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-10T05%3A44%3A53Z&ske=2025-04-11T05%3A44%3A53Z&sks=b&skv=2024-08-04&sig=W%2BP6PGCln%2BaqVoD3SOKNLkBfJVNelusI9WuW1QboHbo%3D') center center / cover no-repeat;
+      background: url('https://i.postimg.cc/QMfzkqJm/image.png') center center / cover no-repeat;
       color: white;
       padding: 2rem 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+      min-height: 300px; /* Задаємо висоту для фону */
+    }
+
+    .header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Темне накриття для покращення контрасту */
+      z-index: 1;
     }
 
     .logo {
-      max-width: 100px;
+      max-width: 120px; /* Збільшено розмір логотипу */
       position: absolute;
       left: 20px;
+      padding: 12px; /* Збільшені відступи для покращення вигляду */
+      border-radius: 5px; /* Круглі кути */
+      z-index: 2; /* Задаємо вищий порядок для логотипу */
     }
 
     .header-content {
       text-align: center;
-      color: #2c2c2c;
+      color: #fff; /* Текст білий */
       font-weight: bold;
+      z-index: 2; /* Текст поверх накриття */
     }
 
     h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 3rem; /* Збільшено розмір заголовка */
       font-weight: bold;
     }
 
     .header-content p {
       margin-top: 0.5rem;
-      font-size: 1rem;
+      font-size: 1.5rem; /* Збільшено розмір підзаголовка */
     }
 
     main {
@@ -147,11 +162,12 @@
 <body>
 
   <header>
-    <img src="https://i.imgur.com/JW2qOoh.jpeg" alt="Логотип Люксшоп" class="logo" />
+    <img src="https://i.postimg.cc/mZ6WYTgM/2.png" alt="Логотип Люксшоп" class="logo" /> <!-- Логотип оновлений -->
     <div class="header-content">
       <h1>Люксшоп</h1>
       <p>Якісні термоси та термокружки для тепла і комфорту</p>
     </div>
+    <div class="header-overlay"></div> <!-- Додано затемнення -->
   </header>
 
   <main>
@@ -193,7 +209,6 @@
       <p class="price">250 грн</p>
       <a class="btn disabled" tabindex="-1">Очікується</a>
     </div>
-
     <!-- Автомобільний термокухоль -->
     <div class="product">
       <div class="product-description">
