@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Люксшоп</title>
 
-  <!-- SEO мета-теги -->
+  <!-- SEO -->
   <meta name="description" content="Купити стильні термокружки та термоси у Люксшоп – зберігай тепло напоїв надовго. Швидке замовлення через Instagram!">
   <meta name="keywords" content="термос, термокружка, купити термокружку, купити термос, подарунок, чай, кава, люксшоп">
   <meta name="robots" content="index, follow">
@@ -19,7 +18,7 @@
     }
 
     header {
-      background-color: #1e1e1e;
+      background: url('https://sdmntpritalynorth.oaiusercontent.com/files/00000000-d8d0-6246-a1eb-8c6304c10034/raw?se=2025-04-10T11%3A57%3A29Z&sp=r&sv=2024-08-04&sr=b&scid=af4beabf-8172-559c-bad4-01a3ce700e71&skoid=59d06260-d7df-416c-92f4-051f0b47c607&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-10T05%3A44%3A53Z&ske=2025-04-11T05%3A44%3A53Z&sks=b&skv=2024-08-04&sig=W%2BP6PGCln%2BaqVoD3SOKNLkBfJVNelusI9WuW1QboHbo%3D') center center / cover no-repeat;
       color: white;
       padding: 2rem 1rem;
       display: flex;
@@ -36,6 +35,8 @@
 
     .header-content {
       text-align: center;
+      color: #2c2c2c;
+      font-weight: bold;
     }
 
     h1 {
@@ -123,6 +124,13 @@
       border-radius: 5px;
     }
 
+    .btn.disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+      pointer-events: none;
+      text-decoration: none;
+    }
+
     footer {
       background-color: #1e1e1e;
       color: white;
@@ -136,8 +144,8 @@
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <img src="https://i.imgur.com/JW2qOoh.jpeg" alt="Логотип Люксшоп" class="logo" />
     <div class="header-content">
@@ -151,13 +159,13 @@
     <div class="product">
       <div class="product-description">
         <h3>Термокружка</h3>
-        <p>Компактна та стильна термокружка, яка зберігає тепло до 6 годин. Ідеально підходить для кави або чаю в дорозі, на роботі чи вдома. Зручний формат і герметична кришка — комфорт щодня!</p>
+        <p>Компактна та стильна термокружка, яка зберігає тепло до 6 годин...</p>
       </div>
       <div class="carousel">
-        <img src="https://sc04.alicdn.com/kf/H7cda7698557340bc861ab759fc8ac5a4u.jpg" class="active" />
+        <img src="https://sc04.alicdn.com/kf/Hd76602c24f08486a9ef8ffbbef8d2042f.jpg" class="active" />
         <img src="https://sc04.alicdn.com/kf/H0389b16bb5e24f87978b1c6f3769db032.jpg" />
         <img src="https://sc04.alicdn.com/kf/H7a0c8e6ed5844064a709180d41244d9d2.jpg" />
-        <img src="https://sc04.alicdn.com/kf/Hd76602c24f08486a9ef8ffbbef8d2042f.jpg" />
+        <img src="https://sc04.alicdn.com/kf/H7cda7698557340bc861ab759fc8ac5a4u.jpg" />
         <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
         <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
       </div>
@@ -169,9 +177,9 @@
     <!-- Термос -->
     <div class="product">
       <div class="carousel">
-        <img src="https://s.alicdn.com/@sc04/kf/H1f84e9e66cbc432685e6fc1282143777f.jpg_720x720q50.jpg" class="active" />
+        <img src="https://sc04.alicdn.com/kf/H5914872b858f4e7b91176abdc821b310P.jpg" class="active" />
         <img src="https://sc04.alicdn.com/kf/H66407f9ed51345e89fc69497c777e1dcH.jpg" />
-        <img src="https://sc04.alicdn.com/kf/H5914872b858f4e7b91176abdc821b310P.jpg" />
+        <img src="https://s.alicdn.com/@sc04/kf/H1f84e9e66cbc432685e6fc1282143777f.jpg_720x720q50.jpg" />
         <img src="https://sc04.alicdn.com/kf/H1cbbc565113d4d39b58a1c41bd97a87e0.jpg" />
         <img src="https://sc04.alicdn.com/kf/H2f49b6ef2b2e4d8ca85ef3dfee10ac5cZ.jpg" />
         <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
@@ -179,9 +187,28 @@
       </div>
       <div class="product-description" style="margin-top: 1rem;">
         <h3>Термос</h3>
-        <p>Надійний термос на 500 мл, який зберігає тепло до 12 годин. Ідеальний вибір для подорожей, прогулянок чи щоденного використання. Міцний корпус і стильний дизайн — завжди з тобою!</p>
+        <p>Надійний термос на 500 мл, який зберігає тепло до 12 годин...</p>
       </div>
       <h3>Термос 500 мл</h3>
+      <p class="price">250 грн</p>
+      <a class="btn disabled" tabindex="-1">Очікується</a>
+    </div>
+
+    <!-- Автомобільний термокухоль -->
+    <div class="product">
+      <div class="product-description">
+        <h3>Автомобільний термокухоль</h3>
+        <p>Зручний термокухоль для авто з герметичною кришкою. Тепло до 6 годин, зручно у тримачі — ідеально для водіїв!</p>
+      </div>
+      <div class="carousel">
+        <img src="https://www.websklad.biz.ua/wp-content/uploads/wsdZfedasd.jpg" class="active" />
+        <img src="https://www.websklad.biz.ua/wp-content/uploads/trwasdffafsa.jpg" />
+        <img src="https://www.websklad.biz.ua/wp-content/uploads/rwsdfadstgre.jpg" />
+        <img src="https://www.websklad.biz.ua/wp-content/uploads/erfdsgtrfsdgfrd.jpg" />
+        <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
+        <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
+      </div>
+      <h3>Автомобільний термокухоль</h3>
       <p class="price">250 грн</p>
       <a class="btn" href="https://www.instagram.com/moa.skrunya/" target="_blank">Замовити в Instagram</a>
     </div>
@@ -201,6 +228,6 @@
       images[activeIndex].classList.add("active");
     }
   </script>
-</body>
 
+</body>
 </html>
