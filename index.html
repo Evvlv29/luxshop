@@ -25,7 +25,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      min-height: 300px; /* Задаємо висоту для фону */
+      min-height: 300px;
     }
 
     .header-overlay {
@@ -34,39 +34,39 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.5); /* Темне накриття для покращення контрасту */
+      background: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
 
     .logo {
-      max-width: 120px; /* Збільшено розмір логотипу */
+      max-width: 90px;
       position: absolute;
       left: 20px;
-      padding: 12px; /* Збільшені відступи для покращення вигляду */
-      border-radius: 5px; /* Круглі кути */
-      z-index: 2; /* Задаємо вищий порядок для логотипу */
+      padding: 8px;
+      border-radius: 5px;
+      z-index: 2;
     }
 
     .header-content {
       text-align: center;
-      color: #fff; /* Текст білий */
+      color: #fff;
       font-weight: bold;
-      z-index: 2; /* Текст поверх накриття */
+      z-index: 2;
     }
 
     h1 {
       margin: 0;
-      font-size: 3rem; /* Збільшено розмір заголовка */
+      font-size: 2.5rem;
       font-weight: bold;
     }
 
     .header-content p {
       margin-top: 0.5rem;
-      font-size: 1.5rem; /* Збільшено розмір підзаголовка */
+      font-size: 1.2rem;
     }
 
     main {
-      padding: 2rem;
+      padding: 1.5rem 1rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
@@ -79,20 +79,21 @@
       padding: 1rem;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       max-width: 300px;
+      width: 100%;
       text-align: center;
     }
 
     .carousel {
       position: relative;
       width: 100%;
-      height: 300px;
+      height: 250px;
       overflow: hidden;
       border-radius: 10px;
     }
 
     .carousel img {
       width: 100%;
-      height: 300px;
+      height: 250px;
       object-fit: cover;
       display: none;
       transition: opacity 0.5s ease-in-out;
@@ -106,7 +107,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: white;
       background-color: rgba(0, 0, 0, 0.5);
       border: none;
@@ -157,78 +158,140 @@
       text-align: left;
       margin-bottom: 1rem;
     }
+
+    /* 🔽 Адаптація для мобільних пристроїв */
+    @media (max-width: 768px) {
+      header {
+        padding: 1.5rem 1rem;
+        min-height: 250px;
+      }
+
+      .logo {
+        max-width: 70px;
+        left: 10px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .header-content p {
+        font-size: 1rem;
+      }
+
+      .carousel {
+        height: 200px;
+      }
+
+      .carousel img {
+        height: 200px;
+      }
+
+      .arrow {
+        font-size: 1.2rem;
+        padding: 0.2em 0.4em;
+      }
+
+      .product {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .header-content p {
+        font-size: 0.95rem;
+      }
+
+      .product-description h3,
+      .product h3 {
+        font-size: 1.1rem;
+      }
+
+      .price {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 0.4em 0.8em;
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://i.postimg.cc/mZ6WYTgM/2.png" alt="Логотип Люксшоп" class="logo" /> <!-- Логотип оновлений -->
+    <img src="https://i.postimg.cc/mZ6WYTgM/2.png" alt="Логотип Люксшоп" class="logo" />
     <div class="header-content">
       <h1>Люксшоп</h1>
       <p>Якісні термоси та термокружки для тепла і комфорту</p>
     </div>
-    <div class="header-overlay"></div> <!-- Додано затемнення -->
+    <div class="header-overlay"></div>
   </header>
 
   <main>
-  <!-- Термокружка -->
-  <div class="product">
-    <div class="product-description">
-      <h3>Термокружка</h3>
-      <p>Компактна та стильна термокружка, яка зберігає тепло до 6 годин...</p>
+    <!-- Термокружка -->
+    <div class="product">
+      <div class="product-description">
+        <h3>Термокружка</h3>
+        <p>Компактна та стильна термокружка, яка зберігає тепло до 6 годин...</p>
+      </div>
+      <div class="carousel">
+        <img src="https://sc04.alicdn.com/kf/Hd76602c24f08486a9ef8ffbbef8d2042f.jpg" class="active" />
+        <img src="https://sc04.alicdn.com/kf/H0389b16bb5e24f87978b1c6f3769db032.jpg" />
+        <img src="https://sc04.alicdn.com/kf/H7a0c8e6ed5844064a709180d41244d9d2.jpg" />
+        <img src="https://sc04.alicdn.com/kf/H7cda7698557340bc861ab759fc8ac5a4u.jpg" />
+        <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
+        <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
+      </div>
+      <h3>Термокружка 500 мл</h3>
+      <p class="price">275 грн</p>
+      <a class="btn" href="https://www.instagram.com/moa.skrunya/" target="_blank">Замовити в Instagram</a>
     </div>
-    <div class="carousel">
-      <img src="https://sc04.alicdn.com/kf/Hd76602c24f08486a9ef8ffbbef8d2042f.jpg" class="active" />
-      <img src="https://sc04.alicdn.com/kf/H0389b16bb5e24f87978b1c6f3769db032.jpg" />
-      <img src="https://sc04.alicdn.com/kf/H7a0c8e6ed5844064a709180d41244d9d2.jpg" />
-      <img src="https://sc04.alicdn.com/kf/H7cda7698557340bc861ab759fc8ac5a4u.jpg" />
-      <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
-      <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
-    </div>
-    <h3>Термокружка 500 мл</h3>
-    <p class="price">275 грн</p>
-    <a class="btn" href="https://www.instagram.com/moa.skrunya/" target="_blank">Замовити в Instagram</a>
-  </div>
 
-  <!-- Термос -->
-  <div class="product">
-    <div class="carousel">
-      <img src="https://sc04.alicdn.com/kf/H5914872b858f4e7b91176abdc821b310P.jpg" class="active" />
-      <img src="https://sc04.alicdn.com/kf/H66407f9ed51345e89fc69497c777e1dcH.jpg" />
-      <img src="https://s.alicdn.com/@sc04/kf/H1f84e9e66cbc432685e6fc1282143777f.jpg_720x720q50.jpg" />
-      <img src="https://sc04.alicdn.com/kf/H1cbbc565113d4d39b58a1c41bd97a87e0.jpg" />
-      <img src="https://sc04.alicdn.com/kf/H2f49b6ef2b2e4d8ca85ef3dfee10ac5cZ.jpg" />
-      <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
-      <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
+    <!-- Термос -->
+    <div class="product">
+      <div class="carousel">
+        <img src="https://sc04.alicdn.com/kf/H5914872b858f4e7b91176abdc821b310P.jpg" class="active" />
+        <img src="https://sc04.alicdn.com/kf/H66407f9ed51345e89fc69497c777e1dcH.jpg" />
+        <img src="https://s.alicdn.com/@sc04/kf/H1f84e9e66cbc432685e6fc1282143777f.jpg_720x720q50.jpg" />
+        <img src="https://sc04.alicdn.com/kf/H1cbbc565113d4d39b58a1c41bd97a87e0.jpg" />
+        <img src="https://sc04.alicdn.com/kf/H2f49b6ef2b2e4d8ca85ef3dfee10ac5cZ.jpg" />
+        <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
+        <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
+      </div>
+      <div class="product-description" style="margin-top: 1rem;">
+        <h3>Термос</h3>
+        <p>Надійний термос на 500 мл, який зберігає тепло до 12 годин...</p>
+      </div>
+      <h3>Термос 500 мл</h3>
+      <p class="price">275 грн</p>
+      <a class="btn disabled" tabindex="-1">Очікується</a>
     </div>
-    <div class="product-description" style="margin-top: 1rem;">
-      <h3>Термос</h3>
-      <p>Надійний термос на 500 мл, який зберігає тепло до 12 годин...</p>
-    </div>
-    <h3>Термос 500 мл</h3>
-    <p class="price">275 грн</p>
-    <a class="btn disabled" tabindex="-1">Очікується</a>
-  </div>
 
-  <!-- Автомобільний термокухоль -->
-  <div class="product">
-    <div class="product-description">
+    <!-- Автомобільний термокухоль -->
+    <div class="product">
+      <div class="product-description">
+        <h3>Автомобільний термокухоль</h3>
+        <p>Зручний термокухоль для авто з герметичною кришкою. Тепло до 6 годин, зручно у тримачі — ідеально для водіїв!</p>
+      </div>
+      <div class="carousel">
+        <img src="https://www.websklad.biz.ua/wp-content/uploads/wsdZfedasd.jpg" class="active" />
+        <img src="https://www.websklad.biz.ua/wp-content/uploads/trwasdffafsa.jpg" />
+        <img src="https://www.websklad.biz.ua/wp-content/uploads/rwsdfadstgre.jpg" />
+        <img src="https://www.websklad.biz.ua/wp-content/uploads/erfdsgtrfsdgfrd.jpg" />
+        <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
+        <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
+      </div>
       <h3>Автомобільний термокухоль</h3>
-      <p>Зручний термокухоль для авто з герметичною кришкою. Тепло до 6 годин, зручно у тримачі — ідеально для водіїв!</p>
+      <p class="price">275 грн</p>
+      <a class="btn" href="https://www.instagram.com/moa.skrunya/" target="_blank">Замовити в Instagram</a>
     </div>
-    <div class="carousel">
-      <img src="https://www.websklad.biz.ua/wp-content/uploads/wsdZfedasd.jpg" class="active" />
-      <img src="https://www.websklad.biz.ua/wp-content/uploads/trwasdffafsa.jpg" />
-      <img src="https://www.websklad.biz.ua/wp-content/uploads/rwsdfadstgre.jpg" />
-      <img src="https://www.websklad.biz.ua/wp-content/uploads/erfdsgtrfsdgfrd.jpg" />
-      <div class="arrow arrow-left" onclick="moveSlide(this, -1)">&#10094;</div>
-      <div class="arrow arrow-right" onclick="moveSlide(this, 1)">&#10095;</div>
-    </div>
-    <h3>Автомобільний термокухоль</h3>
-    <p class="price">275 грн</p>
-    <a class="btn" href="https://www.instagram.com/moa.skrunya/" target="_blank">Замовити в Instagram</a>
-  </div>
-</main>
+  </main>
 
   <footer>
     <p>&copy; 2025 Люксшоп. Всі права захищені.</p>
